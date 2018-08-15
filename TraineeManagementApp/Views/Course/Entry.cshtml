@@ -1,0 +1,39 @@
+﻿@model TraineeManagement.Models.Course
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Entry</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <div class="alert-success">
+        @ViewBag.Message
+    </div>
+    @using (Html.BeginForm())
+    {
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(c => c.Code, new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.TextBoxFor(c => c.Code, new {@class = "form-control"})
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-primary" value="Save"/>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+</body>
+</html>

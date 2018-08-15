@@ -1,0 +1,55 @@
+﻿@model List<TraineeManagement.Models.Course>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container">
+    <h1> Courses</h1>
+    <div class="form-group">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-hover table-responsive">
+                <thead>
+                <tr>
+                    <th>
+                        Code
+                    </th>
+                </tr>
+                
+                </thead>
+                <tbody>
+                @if (Model == null)
+                {
+                    <tr>
+                        <td>No Data Found!</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var course in Model)
+                    {
+                        <tr>
+                            <td>
+                                @course.Code
+                            </td>
+                        </tr>
+                    }
+                }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
